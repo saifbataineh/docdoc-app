@@ -11,7 +11,7 @@ platform :android do
     app: "1:293896661413:android:11505809681cbb4cf7604c",
     firebase_cli_token:ENV["FIREBASE_CLI_TOKEN"],
     
-    android_artifact_path:"../build/app/outputs/flutter-apk/app-production-release.apk",
+    apk_path:"../build/app/outputs/flutter-apk/app-production-release.apk",
     testers: "haithamwajdi02@gmail.com",
     release_notes:"ya rab"
     )
