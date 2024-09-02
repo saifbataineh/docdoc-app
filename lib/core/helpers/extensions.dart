@@ -18,3 +18,13 @@ extension Navigation on BuildContext {
 
   void pop() => Navigator.of(this).pop();
 }
+
+extension StringExtension on String? {
+  bool isNullorEmpty() => this == null || this=="";
+}
+extension ListExtension<T> on List<T>? {
+  bool isNullorEmpty() => this == null || this!.isEmpty;
+}
+extension MapExtension<T> on Map<String,dynamic>? {
+  bool isNullorEmpty() => this == null || this!.isEmpty;
+}

@@ -7,13 +7,14 @@ part of 'sign_up_response.dart';
 // **************************************************************************
 
 SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
-    SignUpResponse()
-      ..message = json['message'] as String?
-      ..userData = json['data'] == null
+    SignUpResponse(
+      code: (json['code'] as num?)?.toInt(),
+      message: json['message'] as String?,
+      statue: json['statue'] as bool?,
+      userData: json['data'] == null
           ? null
-          : UserData.fromJson(json['data'] as Map<String, dynamic>)
-      ..statue = json['statue'] as bool?
-      ..code = (json['code'] as num?)?.toInt();
+          : UserData.fromJson(json['data'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$SignUpResponseToJson(SignUpResponse instance) =>
     <String, dynamic>{

@@ -1,4 +1,5 @@
 import 'package:flutter_advanced/core/networking/api_error_handler.dart';
+
 import 'package:flutter_advanced/core/networking/api_results.dart';
 import 'package:flutter_advanced/core/networking/api_service.dart';
 import 'package:flutter_advanced/features/signUp/data/models/sign_up_request_body.dart';
@@ -13,7 +14,7 @@ class SignUpRepo {
       final response = await _apiService.signUp(signUpRequestBody);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }
